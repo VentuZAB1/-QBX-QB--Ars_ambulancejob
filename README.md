@@ -1,11 +1,10 @@
-![06](https://github.com/Arius-Development/ars_ambulancejob/assets/70983185/5cbe1ee4-b75c-4134-87ee-99fb4c651bf8)
-
 Experience the intensity of emergency response in Arius Ambulance Job :ambulance:! Transport patients, deliver critical care, and immerse yourself in hyper-realistic roleplay and more. Ready to be the hero on the front lines?
 
 :arrows_counterclockwise: **Frameworks**
 
 -   ESX
 -   QBCORE
+-   QBOX
 
 :dart: **Dependencies**
 
@@ -42,7 +41,7 @@ Experience the intensity of emergency response in Arius Ambulance Job :ambulance
 
 :crystal*ball: \_Stay tuned for more exciting features coming soon!*
 
-:page_facing_up: **GitHub Repository:**
+Original:**GitHub Repository:**
 [Download](https://github.com/Arius-Scripts/ars_ambulancejob)
 
 :link: **Video Preview:**
@@ -58,3 +57,4 @@ Experience the intensity of emergency response in Arius Ambulance Job :ambulance
 [Documentation](https://docs.arius-scripts.com)
 
 Feel free to provide suggestions and report any bugs you encounter. Your feedback is invaluable to us as we continue to improve the script. Enjoy!
+
