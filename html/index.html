@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Screen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="death-screen" class="death-container">
+        <div class="circle-container">
+            <div class="circle-progress">
+                <svg class="circle-svg" width="200" height="200">
+                    <circle
+                        cx="100"
+                        cy="100"
+                        r="80"
+                        stroke="#ff0000"
+                        stroke-width="6"
+                        fill="none"
+                        stroke-dasharray="502.4"
+                        stroke-dashoffset="502.4"
+                        transform="rotate(-90 100 100)"
+                        id="progress-circle"
+                    />
+                </svg>
+                <div class="timer-text" id="timer">5:00</div>
+            </div>
+        </div>
+        <div class="action-text" id="action-text">НАТИСНЕТЕ <span class="key-highlight" id="g-key">G</span> ЗА ДА УВЕДОМИТЕ МЕДИЦИТЕ</div>
+        <div class="respawn-text" id="respawn-text" style="display: none;">ЗАДРЪЖТЕ <span class="key-highlight" id="e-key">E</span> ЗА ДА СЕ РЕСПАУНЕТЕ</div>
+        <div class="respawn-progress-container" id="respawn-progress-container" style="display: none;">
+            <div class="respawn-progress-bar">
+                <div class="respawn-progress-fill" id="respawn-progress-fill"></div>
+            </div>
+            <div class="respawn-progress-text" id="respawn-progress-text">0.0s</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
