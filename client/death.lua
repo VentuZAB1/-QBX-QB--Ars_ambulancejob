@@ -96,21 +96,11 @@ function stopPlayerDeath()
     healPlayer()
 end
 
--- Utility function to set health with cap
-local function setHealthWithCap(ped, health)
-    local cappedHealth = math.min(health, Config.HealthArmorPersistence.MaxHealthCap)
-    SetEntityHealth(ped, cappedHealth)
-
-    if Config.Debug then
-        print("^2[DEBUG]^7 Health set: requested=" .. health .. ", capped=" .. cappedHealth)
-    end
-end
-
 function healPlayer()
     local playerPed = cache.ped or PlayerPedId()
     local maxHealth = GetEntityMaxHealth(playerPed)
 
-    setHealthWithCap(playerPed, maxHealth)
+    SetEntityHealth(playerPed, maxHealth)
     healStatus()
 end
 
@@ -550,8 +540,8 @@ CreateThread(function()
                         print("^2[DEBUG]^7 SPAWN PROTECTION: Healing player with 0 health during spawn")
                     end
                     local maxHealth = GetEntityMaxHealth(playerPed)
-                    setHealthWithCap(playerPed, maxHealth)
-                    currentHealth = math.min(maxHealth, Config.HealthArmorPersistence.MaxHealthCap)
+                    SetEntityHealth(playerPed, maxHealth)
+                    currentHealth = maxHealth
                 end
 
                 wasAlive = not isDead and not player.isDead and currentHealth > 0
@@ -603,7 +593,7 @@ function onPlayerLoaded()
                         if Config.Debug and Config.HealthArmorPersistence.Debug then
                             print("^2[DEBUG]^7 Restoring health from", currentHealth, "to", savedHealth)
                         end
-                        setHealthWithCap(playerPed, savedHealth)
+                        SetEntityHealth(playerPed, savedHealth)
                     end
 
                     if savedArmor ~= currentArmor then
@@ -621,7 +611,7 @@ function onPlayerLoaded()
                         if Config.Debug and Config.HealthArmorPersistence.Debug then
                             print("^2[DEBUG]^7 Health too low for alive player - setting to minimum safe level")
                         end
-                        setHealthWithCap(playerPed, math.max(savedHealth, minHealth))
+                        SetEntityHealth(playerPed, math.max(savedHealth, minHealth))
                     end
                 else
                     -- If persistence is disabled, just do basic health check
@@ -629,7 +619,7 @@ function onPlayerLoaded()
                         if Config.Debug then
                             print("^2[DEBUG]^7 Basic health restoration - current health too low")
                         end
-                        setHealthWithCap(playerPed, maxHealth)
+                        SetEntityHealth(playerPed, maxHealth)
                     end
                 end
             end

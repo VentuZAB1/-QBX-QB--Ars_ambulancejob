@@ -45,7 +45,6 @@ Config.HealthArmorPersistence = {
     Enable = true,                          -- Enable health and armor saving/loading
     SaveInterval = 60,                      -- Save interval in seconds (60 = save every 60 seconds) - Increased for better performance
     MinHealthForAlive = 10,                 -- Minimum health percentage for alive players (10 = 10% of max health)
-    MaxHealthCap = 100,                     -- Maximum health cap (100 = never allow health above 100)
     Debug = false,                          -- Show debug messages for health/armor persistence
 }
 

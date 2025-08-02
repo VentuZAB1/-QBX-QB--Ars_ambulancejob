@@ -94,7 +94,7 @@ function getPlayerHealthArmor(target)
     local armor = tonumber(savedArmor) or 0
 
     -- Ensure valid ranges
-    health = math.max(0, math.min(Config.HealthArmorPersistence.MaxHealthCap, health))
+    health = math.max(0, math.min(200, health))
     armor = math.max(0, math.min(100, armor))
 
     if Config.Debug and Config.HealthArmorPersistence.Debug then
